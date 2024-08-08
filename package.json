@@ -1,0 +1,28 @@
+{
+  "name": "devburger-api",
+  "version": "1.0.0",
+  "main": "src/server.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon"
+  },
+  "keywords": [],
+  "author": {
+    "name": "Israel DevWeb",
+    "url": "https://github.com/IsraelPontes"
+  },
+  "license": "ISC",
+  "description": "DevBurger API",
+  "dependencies": {
+    "express": "^4.19.2"
+  },
+  "devDependencies": {
+    "eslint": "^9.8.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-prettier": "^5.2.1",
+    "nodemon": "^3.1.4",
+    "prettier": "^3.3.3",
+    "sucrase": "^3.35.0"
+  }
+}
