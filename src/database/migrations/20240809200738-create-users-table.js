@@ -1,15 +1,12 @@
-const { UUID, UUIDV4 } = require('sequelize');
-
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {
-
     await queryInterface.createTable('users', {
       id: {
         primaryKey: true,
-        allowNulle: false,
-        type: UUID,
-        defaultValue: UUIDV4,
+        allowNull: false, // Correção aqui
+        type: Sequelize.UUID,
+        defaultValue: Sequelize.UUIDV4,
       },
       name: {
         type: Sequelize.STRING,
@@ -32,12 +29,11 @@ module.exports = {
         type: Sequelize.DATE,
         allowNull: false,
       },
-      update_at: {
+      updated_at: { // Correção aqui
         type: Sequelize.DATE,
         allowNull: false,
       }
-    }
-    );
+    });
   },
 
   async down(queryInterface) {

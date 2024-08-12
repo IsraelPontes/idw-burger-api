@@ -7,12 +7,13 @@ class User extends Model {
                 name: Sequelize.STRING,
                 email: Sequelize.STRING,
                 password_hash: Sequelize.STRING,
-                admin: Sequelize.BOOLEAN
+                admin: Sequelize.BOOLEAN,
             },
             {
-                sequelize
+                sequelize, 
             }
-        )
+        );
     }
 }
-export default User
+
+export default User;
