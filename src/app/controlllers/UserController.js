@@ -33,7 +33,8 @@ class UserController {
             id: v4(),
             name,
             email,
-            password,
+            password
+            ,
             admin,
         })
         return response.status(201).json({
