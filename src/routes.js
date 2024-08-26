@@ -3,6 +3,7 @@ import UserController from "./app/controlllers/UserController";
 import SessionController from "./app/controlllers/SessionController";
 import ProductController from "./app/controlllers/ProductController";
 import multer from "multer";
+import multerConfig from './config/multer';
 
 const routes = new Router()
 const upload = multer(multerConfig)
