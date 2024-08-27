@@ -8,24 +8,30 @@ class ProductController {
             price: Yup.number().required(),
             category: Yup.string().required(),
         })
+
         try {
-            schema.validate.Sync(request.body, { abortEarly: false })
+            schema.validateSync(request.body, { abortEarly: false })
         } catch (err) {
             return response.status(400).json({ error: err.errors })
         }
 
-        const { filename: path } = request.file
-        const { name, price, category } = request.body
+        if (!request.file) {
+            return response.status(400).json({ error: 'File not provided' });
+        }
+
+        const { filename: path } = request.file;
+        const { name, price, category } = request.body;
         const product = await Product.create({
             name,
             price,
             category,
             path,
         })
-        return response.status(201).json(product)
+
+        return response.status(201).json(product);
     }
 
-    async index(request, response){
+    async index(request, response) {
         const products = await Product.findAll()
         return response.json(products)
     }
