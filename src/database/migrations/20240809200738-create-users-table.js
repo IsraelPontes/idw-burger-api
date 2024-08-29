@@ -32,7 +32,7 @@ module.exports = {
       updated_at: { // Correção aqui
         type: Sequelize.DATE,
         allowNull: false,
-      }
+      },
     });
   },
 
